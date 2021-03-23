@@ -19,7 +19,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var answerButton3: UIButton!
     @IBOutlet weak var answerButton4: UIButton!
     
-    var quizLogic = QuizLogic()
+    var quizLogic = QuizLogic(Game.shared.isRandom)
     weak var gameDelegate: GameDelegate?
     weak var gameVCDelegate: GameViewControllerDelegate?
     

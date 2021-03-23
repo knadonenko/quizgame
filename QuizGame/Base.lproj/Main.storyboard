@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="JuD-qG-btw">
-                                <rect key="frame" x="132" y="403" width="150" height="100"/>
+                                <rect key="frame" x="132" y="378" width="150" height="150"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EGV-CZ-XPg">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
@@ -30,7 +30,7 @@
                                         <state key="normal" title="Новая игра"/>
                                         <connections>
                                             <action selector="newGamePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NwW-S9-GOV"/>
-                                            <segue destination="I9c-Xr-erX" kind="presentation" identifier="newGame" modalPresentationStyle="fullScreen" id="ucg-s2-Ahg"/>
+                                            <segue destination="I9c-Xr-erX" kind="show" identifier="newGame" id="ucg-s2-Ahg"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQt-3r-XQZ">
@@ -41,7 +41,15 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Результаты"/>
                                         <connections>
-                                            <segue destination="He3-6z-l7s" kind="presentation" modalPresentationStyle="fullScreen" id="Vdu-Iw-w7n"/>
+                                            <segue destination="He3-6z-l7s" kind="show" id="Vdu-Iw-w7n"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ht8-G4-nCl">
+                                        <rect key="frame" x="0.0" y="100" width="150" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="Настройки"/>
+                                        <connections>
+                                            <segue destination="o8a-i5-eAV" kind="show" identifier="configure" id="gD5-cU-GLJ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -64,7 +72,7 @@
             <objects>
                 <tableViewController id="He3-6z-l7s" customClass="ResultsTableViewController" customModule="QuizGame" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PpK-ij-cbl">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -109,20 +117,20 @@
             <objects>
                 <viewController id="I9c-Xr-erX" customClass="GameViewController" customModule="QuizGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VhT-Ub-38G">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="mOX-22-tQ6">
-                                <rect key="frame" x="20" y="44" width="374" height="818"/>
+                                <rect key="frame" x="20" y="0.0" width="374" height="808"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вопрос" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofh-7S-AHb">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="638"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="628"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="CeL-V0-rwi">
-                                        <rect key="frame" x="0.0" y="648" width="374" height="80"/>
+                                        <rect key="frame" x="0.0" y="638" width="374" height="80"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ut2-Ez-GMw">
                                                 <rect key="frame" x="0.0" y="0.0" width="182" height="80"/>
@@ -146,7 +154,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7Vc-aS-IL5">
-                                        <rect key="frame" x="0.0" y="738" width="374" height="80"/>
+                                        <rect key="frame" x="0.0" y="728" width="374" height="80"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="itl-hm-aXS">
                                                 <rect key="frame" x="0.0" y="0.0" width="182" height="80"/>
@@ -197,6 +205,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pIj-GX-pnn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1161" y="115"/>
+        </scene>
+        <!--Configuration View Controller-->
+        <scene sceneID="0k7-DT-O4U">
+            <objects>
+                <viewController id="o8a-i5-eAV" customClass="ConfigurationViewController" customModule="QuizGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KMU-be-a3D">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="3XI-4U-kKL">
+                                <rect key="frame" x="30" y="10" width="354" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Случайный порядок вопросов" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o86-VP-LLl">
+                                        <rect key="frame" x="0.0" y="28" width="305" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="u8g-w3-7RB">
+                                        <rect key="frame" x="305" y="24.5" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="switchToggled:" destination="o8a-i5-eAV" eventType="valueChanged" id="a7t-gf-39K"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="hnw-nd-hC8"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qU9-gk-vpq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3XI-4U-kKL" firstAttribute="leading" secondItem="KMU-be-a3D" secondAttribute="leadingMargin" constant="10" id="9wi-z2-Yr9"/>
+                            <constraint firstItem="3XI-4U-kKL" firstAttribute="top" secondItem="KMU-be-a3D" secondAttribute="topMargin" constant="10" id="ObK-dT-P8D"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3XI-4U-kKL" secondAttribute="trailing" constant="10" id="yvL-FU-HLq"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="MC1-PO-qfj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pWq-dh-BOZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="-598"/>
         </scene>
     </scenes>
     <resources>

@@ -11,7 +11,10 @@ class Game {
     
     private var gameSession: GameSession?
     
+    var isRandom: Bool = false
+    
     static var shared = Game()
+    let dateFormatter = DateFormatter()
     
     var results: [Record] = [] {
         didSet {
@@ -23,6 +26,7 @@ class Game {
     
     private init() {
         results = scoreStorage.loadResults()
+        dateFormatter.dateFormat = "MMM dd, yyyy HH MM"
     }
     
     func setupSession(session: GameSession) {
@@ -37,12 +41,9 @@ class Game {
         if let game = gameSession {
             var result = Float(game.totalResult) / Float(game.numberOfQuestions)
             result *= 100.0
-            
-            let date : Date = Date()
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "MMM dd, yyyy HH MM"
+        
+            let date = Date()
             let todaysDate = dateFormatter.string(from: date)
-            
             let record = Record(date: todaysDate, score: result)
             results.append(record)
             gameSession = nil
