@@ -16,9 +16,17 @@ class Game {
     static var shared = Game()
     let dateFormatter = DateFormatter()
     
+    var quizRecord = QuizStorage()
+    
     var results: [Record] = [] {
         didSet {
             scoreStorage.saveScoreRecords(results)
+        }
+    }
+    
+    var customQuestions: [Question] = [] {
+        didSet {
+            quizRecord.saveCustomQuestions(customQuestions)
         }
     }
     
@@ -37,6 +45,10 @@ class Game {
         return gameSession!
     }
     
+    func getCustomQuestions() -> [Question] {
+        return quizRecord.loadQuestions()
+    }
+    
     func calculateResult() {
         if let game = gameSession {
             var result = Float(game.totalResult) / Float(game.numberOfQuestions)
@@ -47,7 +59,6 @@ class Game {
             let record = Record(date: todaysDate, score: result)
             results.append(record)
             gameSession = nil
-            print("RESULTS: \(results)")
         }
     }
     
